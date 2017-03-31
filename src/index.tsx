@@ -20,7 +20,7 @@ const enhancer:any = window['devToolsExtension'] ? window['devToolsExtension']()
     // const store = enhancer(settingsReducer, initialState);
 
 
-function configureStore(){
+var configureStore = () => {
     let loggerMiddleware = createLogger();
     let middlewares = [thunkMiddleware,loggerMiddleware];
     let store = createStore(tachesReducer, applyMiddleware(...middlewares));
